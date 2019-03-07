@@ -1,0 +1,65 @@
+﻿@*@model HtmlHelper1.Models.Employee*@
+@model List<HtmlHelper1.Models.Employee>
+@{
+    ViewData["Title"] = "AddEmployee";
+}
+
+<h1>Employee Information</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Date Of Birth</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Zipcode</th>
+            <th>Date Of Joining</th>
+        </tr>
+    </thead>
+    <tr>
+        @*<td>@Model.Name</td>
+            <td>@Model.Dateofbirth</td>
+            <td>@Model.Email</td>
+            <td>@Model.Department</td>
+            <td>@Model.Address</td>
+            <td>@Model.States</td>
+            <td>@Model.City</td>
+            <td>@Model.Zip</td>
+            <td>@Model.Dateofjoin</td>*@
+        @foreach (var e in Model)
+        {
+    <tr>
+        @*<td>@TempData["Name"]</td>
+        <td>@TempData["Dateofbirth"] </td>
+        <td>@TempData["Phone"] </td>
+        <td>@TempData["Email"]</td>
+        <td>@TempData["Department"]</td>
+        <td>@TempData["Address"]</td>
+        <td>@TempData["States"]</td>
+        <td>@TempData["City"]</td>
+        <td>@TempData["Zip"]</td>
+        <td>@TempData["Dateofjoin"]</td>*@
+
+
+
+        <td>@e.Name</td>
+        <td>@e.Dateofbirth </td>
+        <td>@e.Phone </td>
+        <td>@e.Email</td>
+        <td>@e.Department</td>
+        <td>@e.Address</td>
+        <td>@e.States</td>
+        <td>@e.City</td>
+        <td>@e.Zip</td>
+        <td>@e.Dateofjoin</td>
+    </tr>
+    }
+       
+
+
+    </table>
+

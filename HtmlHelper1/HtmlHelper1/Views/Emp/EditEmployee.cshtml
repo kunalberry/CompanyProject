@@ -1,0 +1,15 @@
+﻿@model HtmlHelper1.Models.Employee
+@{
+    ViewBag.Title = "EditEmployee";
+}
+
+<h2>Edit Employee</h2>
+<div class="container jumbotron">
+    @using (Html.BeginForm(null, "Emp", FormMethod.Post))
+    {
+        {
+            @Html.Partial("~/Views/_EmployeePartials.cshtml")
+        }
+    }
+
+</div>

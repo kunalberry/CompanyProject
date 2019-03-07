@@ -1,0 +1,57 @@
+﻿
+@model HtmlHelper1.Models.Employee
+
+
+
+@{
+    ViewData["Title"] = "EmployeeDetails";
+}
+
+<h1>Add Employee</h1>
+
+<div class="container jumbotron">
+    @using (Html.BeginForm("EmployeeDetails", "Emp", FormMethod.Post))
+    {
+       {
+            @Html.Partial("~/Views/_EmployeePartials.cshtml")
+        }
+            }
+</div>
+
+<h1>Employee Data</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Date Of Birth</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Zipcode</th>
+            <th>Date Of Joining</th>
+        </tr>
+    </thead>
+    <tr>
+        @*<td>@ViewBag.name</td>
+            <td>@ViewBag.dateOfBirth</td>
+            <td>@ViewBag.email</td>
+            <td>@ViewBag.department</td>
+            <td>@ViewBag.address</td>
+            <td>@ViewBag.state</td>
+            <td>@ViewBag.city</td>
+            <td>@ViewBag.zipcode</td>
+            <td>@ViewBag.dateOfJoining</td>*@
+
+    </tr>
+
+
+</table>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+

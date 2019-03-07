@@ -1,0 +1,161 @@
+﻿@model HtmlHelper1.Models.Employee
+@{
+    ViewBag.Title = "_EmployeePartials";
+}
+
+
+
+    <div class="form-group">
+        @*@Html.Label("Names", "Name", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.Name, new { @class = "control-label col-md-3 col-sm-4" })
+
+        <div class="col-md-7 col-sm-4">
+            @*@Html.TextBox("name", null, new { @class = "form-control", @placeholder = "Name" })*@
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Name" })
+            <span id="name">@Html.ValidationMessageFor(m => m.Name)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("DOBs", "Date Of Birth", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.Dateofbirth, new { @class = "control-label col-md-3 col-sm-4" })
+        <div class="col-md-7 col-sm-4">
+            @*@Html.TextBox("dateofbirth", null, new { @class = "form-control", @placeholder = "mm/dd/yyyy" })*@
+            @Html.TextBoxFor(m => m.Dateofbirth, new { @class = "form-control", @placeholder = "mm/dd/yyyy" })
+            <span id="dateofbirth">@Html.ValidationMessageFor(m => m.Dateofbirth)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("Phones", "Phone", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.Phone, new { @class = "control-label col-md-3 col-sm-4" })
+        <div class="col-md-7 col-sm-4">
+            @*@Html.TextBox("phone", null, new { @class = "form-control", @placeholder = "Phone Number" })*@
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "Phone Number" })
+            <span id="phone">@Html.ValidationMessageFor(m => m.Phone)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("Emails", "Email", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.Email, new { @class = "control-label col-md-3 col-sm-4" })
+        <div class="col-md-7 col-sm-4">
+            @*@Html.TextBox("email", null, new { @class = "form-control", @placeholder = "Email Address" })*@
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email Address" })
+            <span id="email">@Html.ValidationMessageFor(m => m.Email)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("departments", "Department", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.Department, new { @class = "control-label col-md-3 col-sm-4" })
+        <div class="col-md-7 col-sm-4">
+            @*@Html.DropDownList("department",new List<SelectListItem>
+                {
+                new SelectListItem{Text="Select Department",Value=""},
+                new SelectListItem{Text="CSE",Value="cse"},
+                new SelectListItem{Text="I.T",Value="it"},
+                new SelectListItem{Text="E.C",Value="ec"}
+                },new {@class="form-control"})*@
+            @*@Html.DropDownListFor(m=>m.Department,new List<SelectListItem>
+                {
+                new SelectListItem{Text="Select Department",Value=""},
+                new SelectListItem{Text="CSE",Value="cse"},
+                new SelectListItem{Text="I.T",Value="it"},
+                new SelectListItem{Text="E.C",Value="ec"}
+                },new {@class="form-control"})*@
+            @Html.DropDownListFor(m => m.Department, (IEnumerable<SelectListItem>)ViewBag.departments, new { @class = "form-control" })
+            <span id="department">@Html.ValidationMessageFor(m => m.Department)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("Addresss", "Address", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.Address, new { @class = "control-label col-md-3 col-sm-4" })
+        <div class="col-md-7 col-sm-5">
+            @*@Html.TextArea("address", null, new { @class = "form-control", @placeholder = "Address" })*@
+            @Html.TextAreaFor(m => m.Address, new { @class = "form-control", @placeholder = "Address" })
+            <span id="address">@Html.ValidationMessageFor(m => m.Address)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("States", "State", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.States, new { @class = "control-label col-md-3 col-sm-4" })
+
+        <div class="col-md-7 col-sm-4">
+            @*@Html.DropDownList("states",new List<SelectListItem>
+                {
+                new SelectListItem{Text="Select State",Value="select"},
+                new SelectListItem{Text="Uttar Pradesh",Value="uttar pradesh"},
+                new SelectListItem{Text="Gujrat",Value="gujrat"},
+                new SelectListItem{Text="Goa",Value="goa"},
+                new SelectListItem{Text="Maharastra",Value="maharastra"}
+                },new {@class="form-control"})*@
+            @*@Html.DropDownListFor(m=>m.States,new List<SelectListItem>
+                {
+                new SelectListItem{Text="Select State",Value=" "},
+                new SelectListItem{Text="Uttar Pradesh",Value="uttar pradesh"},
+                new SelectListItem{Text="Gujrat",Value="gujrat"},
+                new SelectListItem{Text="Goa",Value="goa"},
+                new SelectListItem{Text="Maharastra",Value="maharastra"}
+                },new {@class="form-control"})*@
+            @Html.DropDownListFor(m => m.States, (IEnumerable<SelectListItem>)ViewBag.states, new { @class = "form-control" })
+            @*@Html.DropDownListFor(m => m.City, (IEnumerable<SelectListItem>)ViewBag.Cities, new { @class = "col-md-7 col-sm-4 form-control" })*@
+            <span id="state">@Html.ValidationMessageFor(m => m.States)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("Citys", "City", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.City, new { @class = "control-label col-md-3 col-sm-4" })
+        <div class="col-md-7 col-sm-4">
+            @*@Html.DropDownList("city",new List<SelectListItem>
+                {
+                new SelectListItem{Text="Select City",Value="select"},
+                new SelectListItem{Text="A",Value="a"},
+                new SelectListItem{Text="B",Value="b"},
+                new SelectListItem{Text="C",Value="c"}
+                }, new {@class="form-control"})*@
+            @*@Html.DropDownListFor(m=>m.City,new List<SelectListItem>
+                {
+                new SelectListItem{Text="Select City",Value=" "},
+                new SelectListItem{Text="A",Value="a"},
+                new SelectListItem{Text="B",Value="b"},
+                new SelectListItem{Text="C",Value="c"}
+                }, new {@class="form-control"})*@
+
+            @Html.DropDownListFor(m => m.City, (IEnumerable<SelectListItem>)ViewBag.citys, new { @class = "form-control" })
+            <span id="city">@Html.ValidationMessageFor(m => m.City)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("Zips", "Zip", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.Zip, new { @class = "control-label col-md-3 col-sm-4" })
+        <div class="col-md-7 col-sm-4">
+            @*@Html.TextBox("zip", null, new { @class = "form-control", @placeholder = "Zip Code" })*@
+            @Html.TextBoxFor(m => m.Zip, new { @class = "form-control", @placeholder = "Zip Code" })
+            <span id="zip">@Html.ValidationMessageFor(m => m.Zip)</span><br />
+        </div>
+    </div>
+    <div class="form-group">
+        @*@Html.Label("DOJs", "Date Of Join", new { @class = "control-label col-md-3 col-sm-4" })*@
+        @Html.LabelFor(m => m.Dateofjoin, new { @class = "control-label col-md-3 col-sm-4" })
+
+        <div class="col-md-7 col-sm-4">
+            @*@Html.TextBox("dateofjoin", null, new { @class = "form-control", @placeholder = "mm/dd/yyyy" })*@
+            @Html.TextBoxFor(m => m.Dateofjoin, new { @class = "form-control", @placeholder = "mm/dd/yyyy" })
+            <span id="dateofjoin">@Html.ValidationMessageFor(m => m.Dateofjoin)</span><br />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+
+        <div class="form-group">
+            @Html.Label(" ", " ", new { @class = "control-label col-md-3 col-sm-4" })
+            <div class="col-md-7 col-sm-4 col-md-offset-8">
+                <br>
+                <input type="submit" name="submit" class="inputButton button" id="submit" value=" Send " />
+                <button id="buttons">
+                    Cancel
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+

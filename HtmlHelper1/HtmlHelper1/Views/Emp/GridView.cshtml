@@ -1,0 +1,26 @@
+﻿@model IEnumerable<HtmlHelper1.Models.Employee>
+@using GridMvc.Html;
+@{
+    ViewBag.Title = "GridView";
+}
+
+
+
+
+<h2>EmployeeData Through Grid View</h2>
+@(Html.Grid(Model).Columns(col =>
+           {
+               col.Add(x => x.Name).Titled("Names").Sortable(true);
+               col.Add(x => x.Dateofbirth).Titled("Date Of Birth").Sortable(false);
+               col.Add(x => x.Phone).Titled("Phone").Sortable(false);
+               col.Add(x => x.Email).Titled("Email").Sortable(false);
+               col.Add(x => x.Department).Titled("Department").Sortable(false);
+               col.Add(x => x.Address).Titled("Address").Sortable(false);
+               col.Add(x => x.States).Titled("States").Sortable(false);
+               col.Add(x => x.City).Titled("City").Sortable(false);
+               col.Add(x => x.Zip).Titled("Zip").Sortable(false);
+               col.Add(x => x.Dateofjoin).Titled("Dateofjoin").Sortable(false);
+
+
+           }).WithPaging(5))
+
